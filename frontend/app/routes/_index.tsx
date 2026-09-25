@@ -83,13 +83,11 @@ export default function Index() {
   }, [loaderData, dispatch]);
 
   return (
-    <div className="flex flex-col h-screen overflow-hidden bg-slate-950">
+    <div style={{ display: 'flex', flexDirection: 'column', height: '100vh', width: '100vw', overflow: 'hidden' }}>
       <TopBar />
-      <main className="flex-1 relative overflow-hidden">
-        <InteractiveFloorPlan />
-        <MachineDetailDrawer />
-        <PrintViewModal />
-      </main>
+      <InteractiveFloorPlan />
+      <MachineDetailDrawer />
+      <PrintViewModal />
     </div>
   );
 }

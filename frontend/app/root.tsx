@@ -7,6 +7,7 @@ import {
 } from "react-router";
 import { Provider } from "react-redux";
 import { store } from "./store/index.js";
+import "./styles/floor-plan.css";
 
 export function meta() {
   return [

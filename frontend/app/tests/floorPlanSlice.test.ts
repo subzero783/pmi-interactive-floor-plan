@@ -28,11 +28,13 @@ describe('floorPlanSlice Redux reducers', () => {
     ],
     showStatusIndicators: true,
     showLabels: true,
+    showGrid: true,
     activeCategory: 'ALL',
     zoomLevel: 1.0,
     panOffset: { x: 0, y: 0 },
     selectedDepartmentId: null,
     selectedMachineId: null,
+    selectedItem: null,
     isPrintModalOpen: false,
     searchQuery: '',
   };

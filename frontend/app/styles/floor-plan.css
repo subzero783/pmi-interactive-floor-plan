@@ -1,0 +1,676 @@
+/* ==========================================================================
+   DESIGN SYSTEM & RESET
+   ========================================================================== */
+*, *::before, *::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+:root {
+  --bg-dark: #0f172a;
+  --bg-card: rgba(30, 41, 59, 0.85);
+  --bg-card-border: rgba(255, 255, 255, 0.1);
+  --text-main: #f8fafc;
+  --text-muted: #94a3b8;
+  --accent: #38bdf8;
+  --accent-hover: #0284c7;
+
+  /* Department / Machine Palette Matching Drawing */
+  --color-powdercoat: #3da35d;
+  --color-hardware: #4d5c48;
+  --color-machineshop: #228b84;
+  --color-cnc-red: #d13636;
+  --color-staging: #845389;
+  --color-racks: #6e4768;
+  --color-upholstery: #df7325;
+  --color-assembly-lathe: #e47c29;
+  --color-omax-waterjet: #0e65a6;
+  --color-laser: #9a2b37;
+  --color-amada-green: #25966c;
+  --color-spotweld-yellow: #f59e0b;
+  --color-grind-sandblast: #cf9f74;
+  --color-offices: #f8fafc;
+  --color-wall: #1e293b;
+  --color-wall-outer: #0a0f1d;
+}
+
+body {
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+  background-color: var(--bg-dark);
+  color: var(--text-main);
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  overflow: hidden;
+  user-select: none;
+}
+
+/* ==========================================================================
+   TOP NAVIGATION & CONTROL HEADER
+   ========================================================================== */
+header,
+header.app-header {
+  background: rgba(15, 23, 42, 0.95);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+  border-bottom: 1px solid var(--bg-card-border);
+  padding: 10px 20px;
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: space-between;
+  gap: 16px;
+  z-index: 50;
+}
+
+.brand-section {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+
+.brand-icon {
+  width: 36px;
+  height: 36px;
+  background: linear-gradient(135deg, #0284c7, #38bdf8);
+  border-radius: 8px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  box-shadow: 0 0 15px rgba(56, 189, 248, 0.4);
+  flex-shrink: 0;
+}
+
+.brand-icon svg {
+  width: 22px;
+  height: 22px;
+  fill: #ffffff;
+}
+
+.brand-title {
+  font-size: 16px;
+  font-weight: 700;
+  letter-spacing: 0.5px;
+  color: #ffffff;
+  line-height: 1.2;
+}
+
+.brand-subtitle {
+  font-size: 11px;
+  color: var(--text-muted);
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  margin-top: 2px;
+}
+
+/* Controls Bar */
+.controls-wrapper {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  flex-wrap: wrap;
+}
+
+.search-box {
+  position: relative;
+  display: flex;
+  align-items: center;
+}
+
+.search-box input {
+  background: rgba(30, 41, 59, 0.7);
+  border: 1px solid rgba(255, 255, 255, 0.15);
+  border-radius: 8px;
+  padding: 7px 12px 7px 34px;
+  color: #ffffff;
+  font-size: 13px;
+  width: 220px;
+  transition: all 0.2s ease;
+  outline: none;
+}
+
+.search-box input:focus {
+  border-color: var(--accent);
+  background: rgba(30, 41, 59, 0.95);
+  box-shadow: 0 0 12px rgba(56, 189, 248, 0.3);
+  width: 260px;
+}
+
+.search-box svg {
+  position: absolute;
+  left: 10px;
+  width: 15px;
+  height: 15px;
+  fill: var(--text-muted);
+  pointer-events: none;
+}
+
+.btn-group {
+  display: flex;
+  align-items: center;
+  background: rgba(30, 41, 59, 0.6);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  border-radius: 8px;
+  padding: 3px;
+}
+
+.btn,
+.btn-group .btn {
+  background: transparent;
+  border: none;
+  color: var(--text-muted);
+  padding: 6px 10px;
+  font-size: 12px;
+  font-weight: 500;
+  border-radius: 6px;
+  cursor: pointer;
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  transition: all 0.2s ease;
+}
+
+.btn:hover,
+.btn-group .btn:hover {
+  color: #ffffff;
+  background: rgba(255, 255, 255, 0.08);
+}
+
+.btn.active,
+.btn-group .btn.active {
+  color: #ffffff;
+  background: var(--accent);
+  box-shadow: 0 0 10px rgba(56, 189, 248, 0.4);
+}
+
+.btn svg,
+.btn-group .btn svg {
+  width: 14px;
+  height: 14px;
+  fill: currentColor;
+}
+
+/* Filter Pills */
+.filter-bar {
+  background: rgba(15, 23, 42, 0.8);
+  border-bottom: 1px solid rgba(255, 255, 255, 0.05);
+  padding: 6px 20px;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  overflow-x: auto;
+  white-space: nowrap;
+  z-index: 40;
+}
+
+.filter-bar::-webkit-scrollbar {
+  height: 4px;
+}
+
+.filter-bar::-webkit-scrollbar-thumb {
+  background: rgba(255, 255, 255, 0.15);
+  border-radius: 2px;
+}
+
+.filter-chip {
+  background: rgba(30, 41, 59, 0.5);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  border-radius: 20px;
+  padding: 4px 12px;
+  font-size: 11px;
+  font-weight: 500;
+  color: var(--text-muted);
+  cursor: pointer;
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  transition: all 0.2s ease;
+}
+
+.filter-chip .dot {
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+  display: inline-block;
+}
+
+.filter-chip:hover {
+  color: #ffffff;
+  border-color: rgba(255, 255, 255, 0.25);
+}
+
+.filter-chip.active {
+  background: rgba(56, 189, 248, 0.15);
+  border-color: var(--accent);
+  color: var(--text-main);
+}
+
+/* ==========================================================================
+   MAIN VIEWPORT & CAD CANVAS
+   ========================================================================== */
+.viewport-container {
+  position: relative;
+  flex: 1;
+  width: 100%;
+  height: 100%;
+  overflow: hidden;
+  background: #e9edf0; /* Architectural drafting board tone */
+  cursor: grab;
+}
+
+.viewport-container:active {
+  cursor: grabbing;
+}
+
+#planCanvas {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  transform-origin: 0 0;
+  transition: transform 0.05s linear;
+}
+
+svg.floor-plan-svg {
+  width: 2000px;
+  height: 1000px;
+  display: block;
+}
+
+/* Architectural CAD Styling */
+.cad-grid-major { stroke: #cbd5e1; stroke-width: 1.5; stroke-opacity: 0.7; }
+.cad-grid-minor { stroke: #e2e8f0; stroke-width: 0.7; stroke-opacity: 0.8; stroke-dasharray: 4 4; }
+
+.cad-outer-wall {
+  stroke: #0a0f1d;
+  stroke-width: 6;
+  fill: none;
+  stroke-linejoin: miter;
+}
+
+.cad-inner-wall {
+  stroke: #1e293b;
+  stroke-width: 3.5;
+  fill: none;
+}
+
+.cad-partition {
+  stroke: #475569;
+  stroke-width: 1.8;
+  fill: none;
+}
+
+.cad-door-swing {
+  stroke: #64748b;
+  stroke-width: 1.2;
+  stroke-dasharray: 3 3;
+  fill: none;
+}
+
+.cad-door-leaf {
+  stroke: #1e293b;
+  stroke-width: 2;
+}
+
+.cad-window {
+  stroke: #0284c7;
+  stroke-width: 2.5;
+}
+
+/* Zone & Machine Elements */
+.cad-element {
+  cursor: pointer;
+  transition: filter 0.2s ease, opacity 0.2s ease, transform 0.2s ease;
+}
+
+.cad-element:hover {
+  filter: brightness(1.15) drop-shadow(0 0 6px rgba(0, 0, 0, 0.4));
+}
+
+.cad-element.highlighted {
+  filter: brightness(1.25) drop-shadow(0 0 10px #38bdf8);
+  animation: pulseHighlight 1.5s infinite alternate;
+}
+
+.cad-element.dimmed {
+  opacity: 0.25;
+}
+
+@keyframes pulseHighlight {
+  0% { filter: brightness(1.15) drop-shadow(0 0 5px #38bdf8); }
+  100% { filter: brightness(1.35) drop-shadow(0 0 16px #38bdf8); }
+}
+
+.label-text {
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+  font-weight: 700;
+  text-anchor: middle;
+  dominant-baseline: central;
+  pointer-events: none;
+  letter-spacing: 0.2px;
+}
+
+.label-white {
+  fill: #ffffff;
+  paint-order: stroke fill;
+  stroke: rgba(0, 0, 0, 0.6);
+  stroke-width: 1.5px;
+  stroke-linecap: round;
+  stroke-linejoin: round;
+}
+
+.label-dark {
+  fill: #0f172a;
+  font-weight: 800;
+  paint-order: stroke fill;
+  stroke: rgba(255, 255, 255, 0.7);
+  stroke-width: 1px;
+}
+
+.label-yellow {
+  fill: #1e293b;
+  font-weight: 800;
+}
+
+/* Pulsing Entrance Dot */
+@keyframes pulseMarker {
+  0% { r: 16; opacity: 0.9; }
+  50% { r: 24; opacity: 0.3; }
+  100% { r: 16; opacity: 0.9; }
+}
+
+.pulsing-marker {
+  animation: pulseMarker 2s ease-in-out infinite;
+  fill: #3b82f6;
+  fill-opacity: 0.4;
+}
+
+/* ==========================================================================
+   FLOATING HUD & TOOLTIPS
+   ========================================================================== */
+.hud-compass {
+  position: absolute;
+  bottom: 24px;
+  left: 24px;
+  background: var(--bg-card);
+  border: 1px solid var(--bg-card-border);
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
+  padding: 10px 14px;
+  border-radius: 10px;
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.3);
+  z-index: 30;
+}
+
+.compass-dial {
+  width: 32px;
+  height: 32px;
+  border: 2px solid var(--accent);
+  border-radius: 50%;
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.compass-needle {
+  width: 2px;
+  height: 24px;
+  background: linear-gradient(to bottom, #ef4444 50%, #94a3b8 50%);
+}
+
+.compass-labels {
+  font-size: 11px;
+  line-height: 1.3;
+}
+
+.compass-labels strong {
+  color: #ffffff;
+  font-size: 12px;
+  display: block;
+}
+
+/* Zoom Indicator & Buttons */
+.hud-zoom-controls {
+  position: absolute;
+  bottom: 24px;
+  right: 24px;
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+  background: var(--bg-card);
+  border: 1px solid var(--bg-card-border);
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
+  padding: 6px;
+  border-radius: 10px;
+  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.3);
+  z-index: 30;
+}
+
+.hud-btn {
+  width: 36px;
+  height: 36px;
+  background: rgba(255, 255, 255, 0.05);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  border-radius: 8px;
+  color: #ffffff;
+  font-size: 18px;
+  font-weight: 700;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: all 0.2s ease;
+}
+
+.hud-btn:hover {
+  background: var(--accent);
+  color: #0f172a;
+}
+
+/* Hover Tooltip */
+#tooltip {
+  position: absolute;
+  pointer-events: none;
+  background: rgba(15, 23, 42, 0.95);
+  border: 1px solid var(--accent);
+  border-radius: 8px;
+  padding: 8px 12px;
+  font-size: 12px;
+  color: #ffffff;
+  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.5);
+  transform: translate(-50%, -125%);
+  transition: opacity 0.15s ease, transform 0.15s ease;
+  opacity: 0;
+  z-index: 100;
+  white-space: nowrap;
+}
+
+#tooltip.visible {
+  opacity: 1;
+}
+
+#tooltip .tt-title {
+  font-weight: 700;
+  font-size: 13px;
+  color: #38bdf8;
+  margin-bottom: 2px;
+}
+
+#tooltip .tt-category {
+  font-size: 10px;
+  color: var(--text-muted);
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+}
+
+/* ==========================================================================
+   SIDE DETAILS DRAWER
+   ========================================================================== */
+.drawer {
+  position: fixed;
+  top: 0;
+  right: -380px;
+  width: 360px;
+  height: 100vh;
+  background: rgba(15, 23, 42, 0.97);
+  backdrop-filter: blur(16px);
+  -webkit-backdrop-filter: blur(16px);
+  border-left: 1px solid var(--bg-card-border);
+  box-shadow: -10px 0 30px rgba(0, 0, 0, 0.6);
+  transition: right 0.3s cubic-bezier(0.16, 1, 0.3, 1);
+  z-index: 60;
+  display: flex;
+  flex-direction: column;
+  padding: 24px;
+  overflow-y: auto;
+}
+
+.drawer.open {
+  right: 0;
+}
+
+.drawer-header {
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+  margin-bottom: 16px;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+  padding-bottom: 14px;
+}
+
+.drawer-badge {
+  display: inline-block;
+  padding: 3px 8px;
+  border-radius: 4px;
+  font-size: 10px;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+  margin-bottom: 6px;
+}
+
+.drawer-title {
+  font-size: 18px;
+  font-weight: 700;
+  color: #ffffff;
+  line-height: 1.3;
+}
+
+.close-btn {
+  background: transparent;
+  border: none;
+  color: var(--text-muted);
+  font-size: 24px;
+  line-height: 1;
+  cursor: pointer;
+  padding: 4px;
+  border-radius: 4px;
+}
+
+.close-btn:hover {
+  color: #ffffff;
+  background: rgba(255, 255, 255, 0.1);
+}
+
+.drawer-section {
+  margin-bottom: 20px;
+}
+
+.drawer-section-title {
+  font-size: 11px;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  color: var(--accent);
+  margin-bottom: 8px;
+  font-weight: 600;
+}
+
+.spec-table {
+  width: 100%;
+  border-collapse: collapse;
+  font-size: 12px;
+}
+
+.spec-table tr {
+  border-bottom: 1px solid rgba(255, 255, 255, 0.06);
+}
+
+.spec-table td {
+  padding: 8px 0;
+}
+
+.spec-label {
+  color: var(--text-muted);
+  width: 45%;
+}
+
+.spec-value {
+  color: #ffffff;
+  font-weight: 500;
+  text-align: right;
+}
+
+.status-indicator {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  font-weight: 600;
+}
+
+.status-dot {
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+}
+
+.status-dot.active { background: #22c55e; box-shadow: 0 0 8px #22c55e; }
+.status-dot.maintenance { background: #f59e0b; box-shadow: 0 0 8px #f59e0b; }
+.status-dot.standby { background: #38bdf8; box-shadow: 0 0 8px #38bdf8; }
+
+.action-btn {
+  width: 100%;
+  background: var(--accent);
+  border: none;
+  padding: 10px;
+  border-radius: 8px;
+  color: #0f172a;
+  font-weight: 700;
+  font-size: 13px;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  margin-top: auto;
+  transition: background 0.2s ease;
+}
+
+.action-btn:hover {
+  background: #7dd3fc;
+}
+
+/* Print Styles */
+@media print {
+  header, .filter-bar, .hud-compass, .hud-zoom-controls, .drawer {
+    display: none !important;
+  }
+  body, .viewport-container {
+    background: #ffffff !important;
+    overflow: visible !important;
+  }
+  #planCanvas {
+    transform: none !important;
+    position: static !important;
+  }
+  svg.floor-plan-svg {
+    width: 100% !important;
+    height: auto !important;
+  }
+}

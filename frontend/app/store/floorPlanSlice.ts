@@ -30,16 +30,25 @@ export interface Department {
   machines?: Machine[];
 }
 
+export interface SelectedElement {
+  id: string;
+  name: string;
+  category: string;
+  specs: string;
+}
+
 export interface FloorPlanState {
   departments: Department[];
   machines: Machine[];
   showStatusIndicators: boolean;
   showLabels: boolean;
-  activeCategory: string; // 'ALL' or specific category
+  showGrid: boolean;
+  activeCategory: string; // 'ALL' / 'all' or specific category
   zoomLevel: number; // 0.5 to 3.0
   panOffset: { x: number; y: number };
   selectedDepartmentId: string | null;
   selectedMachineId: string | null;
+  selectedItem: SelectedElement | null;
   isPrintModalOpen: boolean;
   searchQuery: string;
 }
@@ -49,11 +58,13 @@ const initialState: FloorPlanState = {
   machines: [],
   showStatusIndicators: true,
   showLabels: true,
-  activeCategory: 'ALL',
+  showGrid: true,
+  activeCategory: 'all',
   zoomLevel: 1.0,
   panOffset: { x: 0, y: 0 },
   selectedDepartmentId: null,
   selectedMachineId: null,
+  selectedItem: null,
   isPrintModalOpen: false,
   searchQuery: '',
 };
@@ -75,8 +86,14 @@ export const floorPlanSlice = createSlice({
     toggleLabels: (state) => {
       state.showLabels = !state.showLabels;
     },
+    toggleGrid: (state) => {
+      state.showGrid = !state.showGrid;
+    },
     setActiveCategory: (state, action: PayloadAction<string>) => {
       state.activeCategory = action.payload;
+    },
+    setSelectedItem: (state, action: PayloadAction<SelectedElement | null>) => {
+      state.selectedItem = action.payload;
     },
     setZoomLevel: (state, action: PayloadAction<number>) => {
       state.zoomLevel = Math.max(0.5, Math.min(3.0, action.payload));
@@ -131,7 +148,9 @@ export const {
   setFloorPlanData,
   toggleStatusIndicators,
   toggleLabels,
+  toggleGrid,
   setActiveCategory,
+  setSelectedItem,
   setZoomLevel,
   zoomIn,
   zoomOut,
