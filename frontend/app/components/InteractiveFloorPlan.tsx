@@ -408,11 +408,11 @@ export const InteractiveFloorPlan: React.FC = () => {
               <line x1="400" y1="140" x2="510" y2="140" stroke="#0284c7" strokeWidth="2.5" strokeDasharray="6 4" />
               <line x1="400" y1="90" x2="510" y2="90" stroke="#94a3b8" strokeWidth="1" strokeDasharray="4 4" />
               <rect x="400" y="50" width="110" height="90" fill="rgba(56, 189, 248, 0.05)" />
-              <circle cx="445" cy="55" r="16" fill="#2fa2e8" filter="url(#blueGlow)" stroke="#ffffff" strokeWidth="2.5" />
+              {/* {<circle cx="445" cy="55" r="16" fill="#2fa2e8" filter="url(#blueGlow)" stroke="#ffffff" strokeWidth="2.5" />} */}
             </g>
 
             {/* North-East Entrance (Blue Dot Marker) */}
-            <g
+            {/* {<g
               id="elem_north_marker_east"
               className="cad-element"
               data-name="North Executive Entrance (East)"
@@ -425,7 +425,7 @@ export const InteractiveFloorPlan: React.FC = () => {
             >
               <rect x="1860" y="35" width="100" height="105" fill="rgba(56, 189, 248, 0.05)" stroke="#1e293b" strokeWidth="2" />
               <circle cx="1865" cy="35" r="16" fill="#2fa2e8" filter="url(#blueGlow)" stroke="#ffffff" strokeWidth="2.5" />
-            </g>
+            </g>} */}
 
             {/* Top Corridor Structural Walls */}
             <line x1="730" y1="140" x2="810" y2="140" stroke="#1e293b" strokeWidth="3" />
