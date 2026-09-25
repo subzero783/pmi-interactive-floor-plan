@@ -1,0 +1,80 @@
+name: PMI Interactive Floor Plan CI/CD
+
+on:
+  push:
+    branches: [ main ]
+  pull_request:
+    branches: [ main ]
+
+jobs:
+  static-analysis-and-test:
+    runs-on: ubuntu-latest
+
+    services:
+      postgres:
+        image: postgres:16-alpine
+        env:
+          POSTGRES_USER: pmi_user
+          POSTGRES_PASSWORD: pmi_password
+          POSTGRES_DB: pmi_floorplan_test
+        ports:
+          - 5432:5432
+        options: >-
+          --health-cmd pg_isready
+          --health-interval 10s
+          --health-timeout 5s
+          --health-retries 5
+
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v4
+
+      - name: Setup Node.js 24
+        uses: actions/setup-node@v4
+        with:
+          node-version: 24
+          cache: 'npm'
+
+      # Stage 1: Static Analysis
+      - name: Install Backend Dependencies
+        run: |
+          cd backend
+          npm ci || npm install
+
+      - name: Install Frontend Dependencies
+        run: |
+          cd frontend
+          npm ci || npm install
+
+      - name: Typecheck Backend
+        run: |
+          cd backend
+          npm run typecheck
+
+      - name: Typecheck Frontend
+        run: |
+          cd frontend
+          npm run typecheck
+
+      # Stage 2 & 3: Environment Provisioning & Database Migration
+      - name: Run Database Migrations
+        env:
+          DATABASE_URL: postgresql://pmi_user:pmi_password@localhost:5432/pmi_floorplan_test?schema=public
+        run: |
+          cd backend
+          npx prisma db push --skip-generate
+          npx prisma db seed
+
+      # Stage 4: Test Execution
+      - name: Run Backend Tests
+        env:
+          DATABASE_URL: postgresql://pmi_user:pmi_password@localhost:5432/pmi_floorplan_test?schema=public
+          JWT_SECRET: test_jwt_secret_key_12345
+        run: |
+          cd backend
+          npm test
+
+      - name: Run Frontend Tests
+        run: |
+          cd frontend
+          npm test

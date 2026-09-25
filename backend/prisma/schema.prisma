@@ -1,0 +1,73 @@
+generator client {
+  provider = "prisma-client-js"
+}
+
+datasource db {
+  provider = "postgresql"
+  url      = env("DATABASE_URL")
+}
+
+enum Role {
+  ADMIN
+  OPERATOR
+  VIEWER
+}
+
+enum DepartmentCategory {
+  PRODUCTION
+  WELDING
+  PRESS_BRAKE
+  FINISHING
+  ASSEMBLY
+  STORAGE
+  OFFICE
+}
+
+enum MachineStatus {
+  RUNNING     // Green status LED
+  IDLE        // Yellow status LED
+  MAINTENANCE // Red status LED
+}
+
+model User {
+  id           String   @id @default(uuid())
+  email        String   @unique
+  passwordHash String
+  name         String
+  role         Role     @default(OPERATOR)
+  createdAt    DateTime @default(now())
+  updatedAt    DateTime @updatedAt
+}
+
+model Department {
+  id          String             @id @default(uuid())
+  code        String             @unique
+  name        String
+  category    DepartmentCategory
+  x           Float
+  y           Float
+  width       Float
+  height      Float
+  color       String
+  description String?
+  machines    Machine[]
+  createdAt   DateTime           @default(now())
+  updatedAt   DateTime           @updatedAt
+}
+
+model Machine {
+  id            String        @id @default(uuid())
+  code          String        @unique
+  name          String
+  departmentId  String
+  department    Department    @relation(fields: [departmentId], references: [id], onDelete: Cascade)
+  status        MachineStatus @default(RUNNING)
+  statusMessage String?
+  x             Float         // Relative coordinate on floor plan (0 - 1000)
+  y             Float         // Relative coordinate on floor plan (0 - 600)
+  width         Float
+  height        Float
+  lastUpdated   DateTime      @default(now())
+  createdAt     DateTime      @default(now())
+  updatedAt     DateTime      @updatedAt
+}
