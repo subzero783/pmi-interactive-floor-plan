@@ -382,16 +382,16 @@ export const InteractiveFloorPlan: React.FC = () => {
                 L 1960,35
                 L 1960,950
                 L 60,950
-                Z
+                L 60,140
               "
             />
 
             {/* Left Exterior Centerline / Crosshair Symbol */}
-            <g transform="translate(30, 420)">
+            {/* <g transform="translate(30, 420)">
               <line x1="0" y1="0" x2="60" y2="0" stroke="#64748b" strokeWidth="1.5" strokeDasharray="12 4 3 4" />
               <line x1="30" y1="-30" x2="30" y2="30" stroke="#64748b" strokeWidth="1.5" strokeDasharray="12 4 3 4" />
               <text x="38" y="-12" fontSize="12" fill="#64748b" fontWeight="700">CL</text>
-            </g>
+            </g> */}
 
             {/* North-West Entrance (Blue Dot Marker) */}
             <g
