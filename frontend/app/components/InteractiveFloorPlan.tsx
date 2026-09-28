@@ -571,7 +571,7 @@ export const InteractiveFloorPlan: React.FC = () => {
               <rect x="1780" y="415" width="90" height="145" fill="transparent" />
             </g>
 
-            <g
+            {/* <g
               id="elem_east_restrooms"
               className="cad-element"
               data-name="Admin Restrooms Suite"
@@ -583,7 +583,7 @@ export const InteractiveFloorPlan: React.FC = () => {
               onClick={handleElementClick}
             >
               <rect x="1870" y="415" width="90" height="145" fill="transparent" />
-            </g>
+            </g> */}
 
             <g
               id="elem_engineering_dept"
@@ -639,7 +639,7 @@ export const InteractiveFloorPlan: React.FC = () => {
               onMouseLeave={handleElementMouseLeave}
               onClick={handleElementClick}
             >
-              <rect x="75" y="335" width="305" height="500" fill="transparent" />
+              <rect x="75" y="350" width="305" height="530" fill="transparent" />
             </g>
 
             <g
@@ -653,7 +653,7 @@ export const InteractiveFloorPlan: React.FC = () => {
               onMouseLeave={handleElementMouseLeave}
               onClick={handleElementClick}
             >
-              <rect x="425" y="335" width="115" height="155" fill="transparent" />
+              <rect x="425" y="347" width="115" height="158" fill="transparent" />
             </g>
 
             <g
@@ -667,7 +667,7 @@ export const InteractiveFloorPlan: React.FC = () => {
               onMouseLeave={handleElementMouseLeave}
               onClick={handleElementClick}
             >
-              <rect x="395" y="630" width="115" height="60" fill="transparent" />
+              <rect x="395" y="666" width="112" height="62" fill="transparent" />
             </g>
 
             {/* Lathe / Assembly Tables */}
@@ -809,7 +809,7 @@ export const InteractiveFloorPlan: React.FC = () => {
               onMouseLeave={handleElementMouseLeave}
               onClick={handleElementClick}
             >
-              <rect x="685" y="330" width="85" height="270" fill="transparent" />
+              <rect x="685" y="340" width="83" height="290" fill="transparent" />
             </g>
 
             <g
@@ -823,7 +823,7 @@ export const InteractiveFloorPlan: React.FC = () => {
               onMouseLeave={handleElementMouseLeave}
               onClick={handleElementClick}
             >
-              <rect x="685" y="635" width="90" height="130" fill="transparent" />
+              <rect x="685" y="665" width="90" height="135" fill="transparent" />
             </g>
 
             <g
@@ -837,7 +837,7 @@ export const InteractiveFloorPlan: React.FC = () => {
               onMouseLeave={handleElementMouseLeave}
               onClick={handleElementClick}
             >
-              <rect x="825" y="335" width="75" height="320" fill="transparent" />
+              <rect x="825" y="345" width="75" height="340" fill="transparent" />
             </g>
 
             {/* Lathes */}
@@ -978,7 +978,7 @@ export const InteractiveFloorPlan: React.FC = () => {
               onMouseLeave={handleElementMouseLeave}
               onClick={handleElementClick}
             >
-              <rect x="1065" y="755" width="90" height="35" fill="transparent" />
+              <rect x="1055" y="794" width="88" height="40" fill="transparent" />
             </g>
 
             <g
@@ -992,7 +992,7 @@ export const InteractiveFloorPlan: React.FC = () => {
               onMouseLeave={handleElementMouseLeave}
               onClick={handleElementClick}
             >
-              <rect x="840" y="735" width="65" height="50" fill="transparent" />
+              <rect x="834" y="772" width="67" height="50" fill="transparent" />
             </g>
 
             {/* East Floor (Amada Turrets, Spot Weld, Press Brakes) */}
@@ -1049,7 +1049,7 @@ export const InteractiveFloorPlan: React.FC = () => {
               onMouseLeave={handleElementMouseLeave}
               onClick={handleElementClick}
             >
-              <rect x="1255" y="505" width="135" height="65" fill="transparent" />
+              <rect x="1255" y="530" width="135" height="65" fill="transparent" />
             </g>
 
             <g
@@ -1063,7 +1063,7 @@ export const InteractiveFloorPlan: React.FC = () => {
               onMouseLeave={handleElementMouseLeave}
               onClick={handleElementClick}
             >
-              <rect x="1395" y="505" width="55" height="88" fill="transparent" />
+              <rect x="1395" y="530" width="55" height="88" fill="transparent" />
             </g>
 
             <g
@@ -1288,7 +1288,7 @@ export const InteractiveFloorPlan: React.FC = () => {
               onMouseLeave={handleElementMouseLeave}
               onClick={handleElementClick}
             >
-              <rect x="400" y="890" width="120" height="50" fill="transparent" />
+              <rect x="390" y="935" width="120" height="50" fill="transparent" />
             </g>
 
             <g
@@ -1302,7 +1302,7 @@ export const InteractiveFloorPlan: React.FC = () => {
               onMouseLeave={handleElementMouseLeave}
               onClick={handleElementClick}
             >
-              <rect x="600" y="850" width="175" height="95" fill="transparent" />
+              <rect x="596" y="895" width="177" height="95" fill="transparent" />
             </g>
 
             <g
@@ -1316,7 +1316,7 @@ export const InteractiveFloorPlan: React.FC = () => {
               onMouseLeave={handleElementMouseLeave}
               onClick={handleElementClick}
             >
-              <rect x="785" y="880" width="80" height="65" fill="transparent" />
+              <rect x="781" y="928" width="89" height="55" fill="transparent" />
             </g>
 
             <g
@@ -1330,7 +1330,7 @@ export const InteractiveFloorPlan: React.FC = () => {
               onMouseLeave={handleElementMouseLeave}
               onClick={handleElementClick}
             >
-              <rect x="840" y="805" width="150" height="30" fill="transparent" />
+              <rect x="839" y="845" width="152" height="32" fill="transparent" />
             </g>
 
             <g
@@ -1344,7 +1344,7 @@ export const InteractiveFloorPlan: React.FC = () => {
               onMouseLeave={handleElementMouseLeave}
               onClick={handleElementClick}
             >
-              <rect x="1075" y="805" width="100" height="30" fill="transparent" />
+              <rect x="1074" y="844" width="100" height="38" fill="transparent" />
             </g>
 
             {[
@@ -1459,20 +1459,20 @@ export const InteractiveFloorPlan: React.FC = () => {
 
           {/* Status Badges Overlay (Toggled by showStatusIndicators) */}
           <g id="layerStatusDots" style={{ display: showStatusIndicators ? 'block' : 'none', pointerEvents: 'none' }}>
-            <circle cx="1255" cy="360" r="5" fill="#22c55e" stroke="#ffffff" strokeWidth="1.5" />
-            <circle cx="1265" cy="520" r="5" fill="#22c55e" stroke="#ffffff" strokeWidth="1.5" />
-            <circle cx="940" cy="350" r="5" fill="#22c55e" stroke="#ffffff" strokeWidth="1.5" />
-            <circle cx="940" cy="405" r="5" fill="#f59e0b" stroke="#ffffff" strokeWidth="1.5" />
-            <circle cx="940" cy="460" r="5" fill="#22c55e" stroke="#ffffff" strokeWidth="1.5" />
-            <circle cx="940" cy="515" r="5" fill="#22c55e" stroke="#ffffff" strokeWidth="1.5" />
-            <circle cx="940" cy="570" r="5" fill="#22c55e" stroke="#ffffff" strokeWidth="1.5" />
-            <circle cx="1105" cy="350" r="5" fill="#22c55e" stroke="#ffffff" strokeWidth="1.5" />
-            <circle cx="1105" cy="455" r="5" fill="#38bdf8" stroke="#ffffff" strokeWidth="1.5" />
-            <circle cx="1310" cy="880" r="5" fill="#22c55e" stroke="#ffffff" strokeWidth="1.5" />
-            <circle cx="1490" cy="880" r="5" fill="#22c55e" stroke="#ffffff" strokeWidth="1.5" />
-            <circle cx="1765" cy="840" r="5" fill="#22c55e" stroke="#ffffff" strokeWidth="1.5" />
-            <circle cx="1615" cy="365" r="5" fill="#22c55e" stroke="#ffffff" strokeWidth="1.5" />
-            <circle cx="1665" cy="365" r="5" fill="#22c55e" stroke="#ffffff" strokeWidth="1.5" />
+            <circle cx="1255" cy="370" r="5" fill="#22c55e" stroke="#ffffff" strokeWidth="1.5" />
+            <circle cx="1265" cy="540" r="5" fill="#22c55e" stroke="#ffffff" strokeWidth="1.5" />
+            <circle cx="928" cy="360" r="5" fill="#22c55e" stroke="#ffffff" strokeWidth="1.5" />
+            <circle cx="930" cy="410" r="5" fill="#22c55e" stroke="#ffffff" strokeWidth="1.5" />
+            <circle cx="925" cy="470" r="5" fill="#22c55e" stroke="#ffffff" strokeWidth="1.5" />
+            <circle cx="925" cy="535" r="5" fill="#22c55e" stroke="#ffffff" strokeWidth="1.5" />
+            <circle cx="930" cy="595" r="5" fill="#22c55e" stroke="#ffffff" strokeWidth="1.5" />
+            <circle cx="1125" cy="350" r="5" fill="#22c55e" stroke="#ffffff" strokeWidth="1.5" />
+            <circle cx="1125" cy="470" r="5" fill="#22c55e" stroke="#ffffff" strokeWidth="1.5" />
+            <circle cx="1310" cy="930" r="5" fill="#22c55e" stroke="#ffffff" strokeWidth="1.5" />
+            <circle cx="1490" cy="930" r="5" fill="#22c55e" stroke="#ffffff" strokeWidth="1.5" />
+            <circle cx="1775" cy="880" r="5" fill="#22c55e" stroke="#ffffff" strokeWidth="1.5" />
+            <circle cx="1635" cy="375" r="5" fill="#22c55e" stroke="#ffffff" strokeWidth="1.5" />
+            <circle cx="1665" cy="370" r="5" fill="#22c55e" stroke="#ffffff" strokeWidth="1.5" />
           </g>
         </svg>
       </div>
