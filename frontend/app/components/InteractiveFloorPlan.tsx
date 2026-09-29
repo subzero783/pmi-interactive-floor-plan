@@ -344,7 +344,7 @@ export const InteractiveFloorPlan: React.FC = () => {
           {/* Invisible Interactive Zones */}
           <g id="interactive-overlays">
             {/* North-West Entrance */}
-            <g
+            {/* <g
               id="elem_north_marker_west"
               className="cad-element"
               data-name="North Warehouse Gate Entrance (West)"
@@ -356,10 +356,10 @@ export const InteractiveFloorPlan: React.FC = () => {
               onClick={handleElementClick}
             >
               <rect x="400" y="50" width="110" height="90" fill="transparent" />
-            </g>
+            </g> */}
 
             {/* North-East Entrance */}
-            <g
+            {/* <g
               id="elem_north_marker_east"
               className="cad-element"
               data-name="North Executive Entrance (East)"
@@ -371,7 +371,7 @@ export const InteractiveFloorPlan: React.FC = () => {
               onClick={handleElementClick}
             >
               <rect x="1860" y="35" width="100" height="105" fill="transparent" />
-            </g>
+            </g> */}
 
             {/* Top North Offices Suite */}
             <g
@@ -667,7 +667,7 @@ export const InteractiveFloorPlan: React.FC = () => {
               onMouseLeave={handleElementMouseLeave}
               onClick={handleElementClick}
             >
-              <rect x="395" y="666" width="112" height="62" fill="transparent" />
+              <rect x="395" y="662" width="112" height="64" fill="transparent" />
             </g>
 
             {/* Lathe / Assembly Tables */}
@@ -682,7 +682,7 @@ export const InteractiveFloorPlan: React.FC = () => {
               onMouseLeave={handleElementMouseLeave}
               onClick={handleElementClick}
             >
-              <rect x="605" y="345" width="35" height="42" fill="transparent" />
+              <rect x="605" y="357" width="28" height="42" fill="transparent" />
             </g>
 
             <g
@@ -696,7 +696,7 @@ export const InteractiveFloorPlan: React.FC = () => {
               onMouseLeave={handleElementMouseLeave}
               onClick={handleElementClick}
             >
-              <rect x="605" y="395" width="35" height="42" fill="transparent" />
+              <rect x="605" y="410" width="28" height="42" fill="transparent" />
             </g>
 
             <g
@@ -710,7 +710,7 @@ export const InteractiveFloorPlan: React.FC = () => {
               onMouseLeave={handleElementMouseLeave}
               onClick={handleElementClick}
             >
-              <rect x="605" y="445" width="35" height="42" fill="transparent" />
+              <rect x="605" y="465" width="28" height="42" fill="transparent" />
             </g>
 
             <g
@@ -724,7 +724,7 @@ export const InteractiveFloorPlan: React.FC = () => {
               onMouseLeave={handleElementMouseLeave}
               onClick={handleElementClick}
             >
-              <rect x="605" y="495" width="35" height="42" fill="transparent" />
+              <rect x="605" y="520" width="28" height="42" fill="transparent" />
             </g>
 
             <g
@@ -738,13 +738,13 @@ export const InteractiveFloorPlan: React.FC = () => {
               onMouseLeave={handleElementMouseLeave}
               onClick={handleElementClick}
             >
-              <rect x="605" y="565" width="35" height="42" fill="transparent" />
+              <rect x="605" y="590" width="28" height="42" fill="transparent" />
             </g>
 
             <g
               id="elem_table_6"
               className="cad-element"
-              data-name="Lathe Table #6"
+              data-name="Lathe Table #2"
               data-category="upholstery"
               data-specs="Assembly fitting table."
               onMouseEnter={handleElementMouseEnter}
@@ -752,13 +752,13 @@ export const InteractiveFloorPlan: React.FC = () => {
               onMouseLeave={handleElementMouseLeave}
               onClick={handleElementClick}
             >
-              <rect x="585" y="635" width="60" height="22" fill="transparent" />
+              <rect x="605" y="663" width="28" height="22" fill="transparent" />
             </g>
 
             <g
               id="elem_table_7"
               className="cad-element"
-              data-name="Lathe Table #7"
+              data-name="Lathe Table #1"
               data-category="upholstery"
               data-specs="Assembly fitting table."
               onMouseEnter={handleElementMouseEnter}
@@ -766,7 +766,7 @@ export const InteractiveFloorPlan: React.FC = () => {
               onMouseLeave={handleElementMouseLeave}
               onClick={handleElementClick}
             >
-              <rect x="560" y="662" width="75" height="24" fill="transparent" />
+              <rect x="558" y="695" width="75" height="24" fill="transparent" />
             </g>
 
             {/* Center Floor (Storage Racks, Upholstery, Machine Shop) */}
@@ -823,7 +823,7 @@ export const InteractiveFloorPlan: React.FC = () => {
               onMouseLeave={handleElementMouseLeave}
               onClick={handleElementClick}
             >
-              <rect x="685" y="665" width="90" height="135" fill="transparent" />
+              <rect x="685" y="665" width="87" height="135" fill="transparent" />
             </g>
 
             <g
@@ -1348,13 +1348,13 @@ export const InteractiveFloorPlan: React.FC = () => {
             </g>
 
             {[
-              { id: 'elem_weld_1', num: 1, x: 885 },
-              { id: 'elem_weld_2', num: 2, x: 928 },
-              { id: 'elem_weld_3', num: 3, x: 971 },
-              { id: 'elem_weld_4', num: 4, x: 1014 },
-              { id: 'elem_weld_5', num: 5, x: 1057 },
-              { id: 'elem_weld_6', num: 6, x: 1100 },
-              { id: 'elem_weld_7', num: 7, x: 1143 },
+              { id: 'elem_weld_7', num: 7, x: 889 },
+              { id: 'elem_weld_6', num: 6, x: 942 },
+              { id: 'elem_weld_5', num: 5, x: 995 },
+              { id: 'elem_weld_4', num: 4, x: 1047 },
+              { id: 'elem_weld_3', num: 3, x: 1097 },
+              { id: 'elem_weld_2', num: 2, x: 1143 },
+              { id: 'elem_weld_1', num: 1, x: 1187 },
             ].map((weld) => (
               <g
                 key={weld.id}
@@ -1368,7 +1368,7 @@ export const InteractiveFloorPlan: React.FC = () => {
                 onMouseLeave={handleElementMouseLeave}
                 onClick={handleElementClick}
               >
-                <rect x={weld.x} y="875" width="40" height="70" fill="transparent" />
+                <rect x={weld.x} y="915" width="30" height="70" fill="transparent" />
               </g>
             ))}
 
