@@ -1383,7 +1383,7 @@ export const InteractiveFloorPlan: React.FC = () => {
               onMouseLeave={handleElementMouseLeave}
               onClick={handleElementClick}
             >
-              <rect x="1295" y="865" width="145" height="75" fill="transparent" />
+              <rect x="1310" y="825" width="160" height="75" fill="transparent" />
             </g>
 
             <g
